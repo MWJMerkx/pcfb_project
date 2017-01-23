@@ -28,5 +28,9 @@ cpuName = str(cpuName[0]).split("  ")[-1]
 #convert 1st idex of list available memory (should be only 1)  to str
 ramAvail = str([line.split(" ")[-1] for line in infoRAM if "Mem" in line][0])
 
+#check is empty and raise error if so (for travis)
+if not(cpuName) or not(ramAvail):
+	raise ValueError('One of the strings is empty, script broke')
+
 print("cpu is {0}\n machine has {1} MB of RAM available\n".format(cpuName,\
 							 ramAvail))
