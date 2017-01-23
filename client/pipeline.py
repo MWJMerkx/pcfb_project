@@ -1,6 +1,8 @@
 #!/usr/bin/env pyhton3
 #Inne Lemstra and Michiel Merkx
 
+import subproccess
+
 #make index files of refernce genome
 indexInputPath = "./e_coli_mg1655.fasta"
 indexOutputPath = "./index_files/index_ecoli"
@@ -11,6 +13,6 @@ comIndex = "bowtie2-build -f {0} {1}".format(indexInputPath, indexOutputPath)
 shortReadspath = "./sra_set.fasta"
 alignOutputPath = "./index_files/index_ecoli"
 
-comAlign = "bowtie2 -f -x {0} -U {1} -S {3}".format(indexOutputPath,\
+comAlign = "bowtie2 -f -x {0} -U {1} -S {2}".format(indexOutputPath,\
 					 shortReadspath, alignOutputPath)
 
