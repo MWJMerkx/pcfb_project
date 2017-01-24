@@ -15,11 +15,13 @@ infoRAM = subprocess.check_output(comGetRAM)
 infoCPU = str(infoCPU).split("\\n") #beware this makes a list not a string
 infoRAM = str(infoRAM).split("\\n") #beware this makes a list not a string
 
+#print(infoCPU)
+
 #cpuField is a line in the output of lscpu
 #Take the first index in the list (should only be 1  model name) and convert to str
 cpuName = [cpuField for cpuField in infoCPU if "Model name" in cpuField]
 
-print (cpuName)
+#print (cpuName)
 #format and convert
 cpuName = str(cpuName[0]).split("  ")[-1]
 
