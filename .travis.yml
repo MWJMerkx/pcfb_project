@@ -8,5 +8,5 @@ python:
 install: true
 
 script:  
-  - ./client/hardware_inquire3,4.py
+  - ./client/hardware_inquire34.py
 
