@@ -4,5 +4,6 @@ python:
   - "3.4"
   - "3.5"
 
+Install: True
 script: ./client/hardware_inquire.py
 
