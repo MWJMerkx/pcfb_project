@@ -2,6 +2,7 @@
 # Michiel Merkx Inne Lemstra
 '''Find Statistics about the amount of RAM and the specific CPU on the current linux computer using bash commands'''
 
+
 import subprocess
 
 comGetRAM = ["free", "-m"]
