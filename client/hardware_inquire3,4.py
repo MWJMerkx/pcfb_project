@@ -23,7 +23,9 @@ cpuName = [cpuField for cpuField in infoCPU if "Model name" in cpuField]
 
 print ("Dit is cpuName:\n {0}".format(cpuName))
 #format and convert
-cpuName = str(cpuName[0]).split("  ")[-1]
+if cpuName:
+	cpuName = str(cpuName[0]).split("  ")[-1]
+
 
 
 #RAM availible is the last field in the free -m call. These fields are split with
@@ -32,7 +34,7 @@ cpuName = str(cpuName[0]).split("  ")[-1]
 ramAvail = str([line.split(" ")[-1] for line in infoRAM if "Mem" in line][0])
 
 #check is empty and raise error if so (for travis)
-if not(cpuName) or not(ramAvail):
+if not(cpuName) and not(ramAvail):
 	raise ValueError('One of the strings is empty, script broke')
 
 print("cpu is {0}\n machine has {1} MB of RAM available\n".format(cpuName,\
