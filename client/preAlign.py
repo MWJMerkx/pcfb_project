@@ -11,7 +11,11 @@ import subprocess
 def go(indexInputPath, indexOutputPath): 
 	comIndex = "bowtie2-build -f {0} {1}".format(indexInputPath,\
 						indexOutputPath)
-	return(subprocess.run(comIndex, shell=True))
+	debug = subprocess.call(comIndex, shell=True)
+	return(debug)
 
 if __name__ == "main":
-	pass
+	indexInputPath = "../test_data/e_coli_mg1655.fasta"
+	indexInputPath	= "../test_data/index_files/libTest"
+	debug = go(indexInputPath, indexOutputPath)
+
