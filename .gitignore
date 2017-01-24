@@ -6,4 +6,4 @@
 *.ppt
 *.pptx
 *.bt*
-
+*__pycache__*
