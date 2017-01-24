@@ -6,5 +6,6 @@ python:
 
 Install: true
 script: 
+  - ./server/parse_benchmark.py
   - ./client/hardware_inquire.py
 
