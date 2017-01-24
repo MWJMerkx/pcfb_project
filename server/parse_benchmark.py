@@ -12,7 +12,7 @@ import re
 
 
 #InFile = input('File name:\n')
-InFile = 'bwa_out.txt'
+InFile = 'bw_out.txt'
 
 
 MyRe = r"((\w+)_.*)"
@@ -47,24 +47,48 @@ DatabaseCheck = str(MyCursor.fetchall())
 
 if DatabaseCheck.count(DataBase) == 0:
 	print("Creating new table")
+	CreateTable = """SET sql_notes = 0;
+	    CREATE TABLE IF NOT EXISTS {0}(
+	    ID integer not null auto_increment primary key,
+	    proccess_time float,
+	    align_time float,
+	    accuracy float,
+	    cpu tinytext,
+	    ram tinytext
+	    );
+	    SET sql_notes = 1;""".format(DataBase)
+	MyCursor.execute(CreateTable)
+
 else:
 	print("Appending to existing table")
+
+InsertData = """INSERT INTO {0} SET
+    ID='{0}',
+    proccess_time={1},
+    align_time={2},
+    accuracy={3},
+    cpu='{4}',
+    ram='{5};""".format(DataBase)
+
+MyCursor.execute(InsertData)
 
 #if DatabaseCheck == DataBase:
 #	print('True')
 #else:
 #	print( 'False')
 
-CreateTable = """CREATE TABLE IF NOT EXISTS {0}(
-    ID integer not null auto_increment primary key,
-    proccess_time float,
-    align_time float,
-    accuracy float,
-    cpu tinytext,
-    ram tinytext
-    );""".format(DataBase)
+#CreateTable = """SET sql_notes = 0;
+#    CREATE TABLE IF NOT EXISTS {0}(
+#    ID integer not null auto_increment primary key,
+#    proccess_time float,
+#    align_time float,
+#    accuracy float,
+#    cpu tinytext,
+#    ram tinytext
+#    );
+#    SET sql_notes = 1;""".format(DataBase)
 
-MyCursor.execute(CreateTable)
+#MyCursor.execute(CreateTable)
 
 
 
