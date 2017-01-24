@@ -3,7 +3,11 @@
 # Inne Lemstra
 # Michiel Merkx
 
-# server side data processing for SRA benchmarking
+# reformat datafile from client side speed benchmarking of short read aligner
+# queries database for sra data table, if not present create table
+# enters benchmark information into the relevant database table
+
+# requires instalation of mysqlclient python module
 
 
 import gzip
@@ -12,7 +16,7 @@ import re
 
 
 #InFile = input('File name:\n')
-InFile = 'bwa_out.txt'
+InFile = 'soap_out.txt'
 
 
 MyRe = r"((\w+)_.*)"
@@ -24,8 +28,8 @@ DataBase = MyResult.group(2)
 print('Search for database:', DataBase)
 
 
-## opening connection to MySQL server
-## check for existing table in the database, else create a new one and store data
+## opens connection to MySQL server
+## check for existing table in the database, else create a new one
 
 
 MyClient = mysqlclient.connect( host = "localhost", user= "root", passwd= "")
@@ -55,7 +59,7 @@ if DatabaseCheck.count(DataBase) == 0:
 	    align_time FLOAT,
 	    accuracy FLOAT,
 	    cpu TINYTEXT,
-	    ram TINYTEXT
+	    ram INT
 	    );
 	    SET sql_notes = 1;""".format(DataBase)
 	MyCursor.execute(CreateTable)
@@ -63,8 +67,10 @@ if DatabaseCheck.count(DataBase) == 0:
 else:
 	print("Appending to existing table")
 
+## instert data into correct table on database
+
 #InsertData = """INSERT INTO {0} SET
-#    ID='{0}',
+#    sra_id='{0}',
 #    proccess_time={1},
 #    align_time={2},
 #    accuracy={3},
@@ -77,19 +83,6 @@ else:
 #	print('True')
 #else:
 #	print( 'False')
-
-#CreateTable = """SET sql_notes = 0;
-#    CREATE TABLE IF NOT EXISTS {0}(
-#    ID integer not null auto_increment primary key,
-#    proccess_time float,
-#    align_time float,
-#    accuracy float,
-#    cpu tinytext,
-#    ram tinytext
-#    );
-#    SET sql_notes = 1;""".format(DataBase)
-
-#MyCursor.execute(CreateTable)
 
 
 MyCursor.close()
