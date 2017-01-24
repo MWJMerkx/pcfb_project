@@ -9,4 +9,3 @@ install: true
 
 script:  
   - ./client/hardware_inquire34.py
-
