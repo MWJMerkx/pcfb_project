@@ -12,7 +12,7 @@ import re
 
 
 #InFile = input('File name:\n')
-InFile = 'bw_out.txt'
+InFile = 'bwa_out.txt'
 
 
 MyRe = r"((\w+)_.*)"
@@ -49,12 +49,13 @@ if DatabaseCheck.count(DataBase) == 0:
 	print("Creating new table")
 	CreateTable = """SET sql_notes = 0;
 	    CREATE TABLE IF NOT EXISTS {0}(
-	    ID integer not null auto_increment primary key,
-	    proccess_time float,
-	    align_time float,
-	    accuracy float,
-	    cpu tinytext,
-	    ram tinytext
+	    ID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	    sra_id TINYTEXT,
+	    proccess_time FLOAT,
+	    align_time FLOAT,
+	    accuracy FLOAT,
+	    cpu TINYTEXT,
+	    ram TINYTEXT
 	    );
 	    SET sql_notes = 1;""".format(DataBase)
 	MyCursor.execute(CreateTable)
@@ -62,15 +63,15 @@ if DatabaseCheck.count(DataBase) == 0:
 else:
 	print("Appending to existing table")
 
-InsertData = """INSERT INTO {0} SET
-    ID='{0}',
-    proccess_time={1},
-    align_time={2},
-    accuracy={3},
-    cpu='{4}',
-    ram='{5};""".format(DataBase)
+#InsertData = """INSERT INTO {0} SET
+#    ID='{0}',
+#    proccess_time={1},
+#    align_time={2},
+#    accuracy={3},
+#    cpu='{4}',
+#    ram='{5}';""".format(DataBase)
 
-MyCursor.execute(InsertData)
+#MyCursor.execute(InsertData)
 
 #if DatabaseCheck == DataBase:
 #	print('True')
@@ -91,6 +92,7 @@ MyCursor.execute(InsertData)
 #MyCursor.execute(CreateTable)
 
 
-
 MyCursor.close()
 MyClient.close()
+
+# print ("Data successfully added")
