@@ -3,6 +3,7 @@
 
 import subproccess
 import hardware_inquire
+import preAlign
 
 #gather hardware data
 [infoCPU, infoRAM] = hardware_inquire.getInfo()
@@ -15,6 +16,7 @@ indexInputPath = "./e_coli_mg1655.fasta"
 indexOutputPath = "./index_files/index_ecoli"
 
 comIndex = "bowtie2-build -f {0} {1}".format(indexInputPath, indexOutputPath)
+SummaryPreAlign = preAlign.go(indexInputPath, indexOutputpath)
 
 #run aligner and time
 #make seperate module and import align function
