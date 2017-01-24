@@ -1,11 +1,12 @@
+dist: trusty
 language: python
 python:
   - "3.3"
   - "3.4"
   - "3.5"
 
-Install: true
-script: 
- 
+install: true
+
+script:  
   - ./client/hardware_inquire.py
 
