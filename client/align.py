@@ -6,7 +6,7 @@ import subprocess
 def go(indexOutputPath, shortReadspath, alignOutputPath):
 	comAlign = "bowtie2 -f -x {0} -U {1} -S {2}".format(indexOutputPath,\
                                          shortReadspath, alignOutputPath)
-	debug = subprocess.run(comAlign, shell = True)
+	debug = subprocess.call(comAlign, shell = True)
 	return(debug)
 
 if __name__ == "main":
