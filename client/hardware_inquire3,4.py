@@ -6,7 +6,7 @@ import subprocess
 
 comGetRAM = ["free", "-m"]
 comGetCPU = "lscpu"
-pipe = subprocess.PIPE
+#pipe = subprocess.PIPE
 
 #calling bash functions
 infoCPU = subprocess.check_output(comGetCPU)
@@ -15,13 +15,13 @@ infoRAM = subprocess.check_output(comGetRAM)
 infoCPU = str(infoCPU).split("\\n") #beware this makes a list not a string
 infoRAM = str(infoRAM).split("\\n") #beware this makes a list not a string
 
-#print(infoCPU)
+print("dit is cpuInfo:\n{0}".format(infoCPU))
 
 #cpuField is a line in the output of lscpu
 #Take the first index in the list (should only be 1  model name) and convert to str
 cpuName = [cpuField for cpuField in infoCPU if "Model name" in cpuField]
 
-#print (cpuName)
+print ("Dit is cpuName:\n {0}".format(cpuName))
 #format and convert
 cpuName = str(cpuName[0]).split("  ")[-1]
 
