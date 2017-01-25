@@ -1,3 +1,12 @@
+## the individual MySQL tables created for the database
+
+# database created called SRA for use with the following table
+
+CREATE DATABASE SRA;
+
+# archive table which stores information on the SRA_ID used in the benchmarking
+# contains organism name, ncbi accession no, number of reads, and read type
+
 CREATE TABLE archives (
 SRA_ID VARCHAR(20) NOT NULL PRIMARY KEY,
 organism TINYTEXT,
@@ -6,7 +15,8 @@ no_reads INTEGER,
 read_type TINYTEXT
 );
 
-
+# results table contains benchmarking results
+# lists the SRA_ID and mapper name, before listing process duration and accuracy data, along with computer CPU and RAM
 
 CREATE TABLE results (
 RUN_ID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -14,16 +24,18 @@ SRA_ID TINYTEXT,
 aligner_ID TINYTEXT,
 proccess_time FLOAT,
 align_time FLOAT,
-mapped_reads INTEGER,
+number_reads INT,
+mapped_reads INT,
 mapped_quality FLOAT,
 cpu TINYTEXT,
 ram TINYTEXT
 );
 
+# Initial entry to archives table with information on SRA_ID used in initial benchmark
 
-
-CREATE TABLE aligner_ID (
-aligner_ID VARCHAR(20) NOT NULL PRIMARY KEY,
-version TINYTEXT,
-parameters TINYTEXT,
-
+INSERT INTO archives SET
+SRA_ID='E_coli_MG1655',
+organism='Escherichia_coli',
+accession_no='SRX2510268'
+no_reads=13599935
+read_type='Paired';
