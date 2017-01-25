@@ -8,7 +8,7 @@ import align
 import time
 import cProfile
 
-shortReads = "../test_data/sra_set.fasta"
+shortReads = ["../test_data/sra_sepair_1.fasta", "../test_data/sra_sepair_2.fasta"]
 referenceGenome = "../test_data/e_coli_mg1655.fasta"
 alignmentOutput = "../test_data/newest_alignment.sam"
 #preAlignOutput = "../test_data/index_files/indexPipeline"	

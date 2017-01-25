@@ -5,7 +5,7 @@ import subprocess
 import time
 
 def benchmark(outputPreStep, shortReads):
-	output = "../test_data/latest_alignment.sam"
+	output = "../test_data/latest_alignment_paired.sam"
 	startTime = time.time()
 	debug = go(outputPreStep, shortReads, output)
 	endTime = time.time()
@@ -13,8 +13,9 @@ def benchmark(outputPreStep, shortReads):
 	return([bmAlign, debug])
 
 def go(indexOutputPath, shortReadspath, alignOutputPath):
-	comAlign = "bowtie2 -f -x {0} -U {1} -S {2}".format(indexOutputPath,\
-                                         shortReadspath, alignOutputPath)
+	comAlign = "bowtie2 -f -x {0} -1 {1} -2 {2} -S {3}"\
+		.format(indexOutputPath, shortReadspath[0],\
+			 shortReadspath[1], alignOutputPath)
 	debug = subprocess.call(comAlign, shell = True)
 	return(debug)
 
