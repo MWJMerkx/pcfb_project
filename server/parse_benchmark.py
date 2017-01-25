@@ -15,8 +15,9 @@ import MySQLdb as mysqlclient
 import re
 
 
-#InFile = input('File name:\n')
+FileName = input('File name:\n')
 InFile = 'soap_out.txt'
+
 
 
 MyRe = r"((\w+)_.*)"
@@ -47,7 +48,7 @@ MyCursor.execute(DatabaseCheck)
 
 DatabaseCheck = str(MyCursor.fetchall())
 
-#print((DatabaseCheck))
+print((DatabaseCheck))
 
 if DatabaseCheck.count(DataBase) == 0:
 	print("Creating new table")
@@ -69,20 +70,18 @@ else:
 
 ## instert data into correct table on database
 
-#InsertData = """INSERT INTO {0} SET
-#    sra_id='{0}',
-#    proccess_time={1},
-#    align_time={2},
-#    accuracy={3},
-#    cpu='{4}',
-#    ram='{5}';""".format(DataBase)
+#InsertData = """INSERT INTO results SET
+#    SRA_ID=,
+#    aligner_ID=,
+#    proccess_time=,
+#    align_time=,
+#    mapped_reads=,
+#    mapped_quality=,
+#    cpu=,
+#    ram=,""".format(DataBase)
 
 #MyCursor.execute(InsertData)
 
-#if DatabaseCheck == DataBase:
-#	print('True')
-#else:
-#	print( 'False')
 
 
 MyCursor.close()

@@ -1,0 +1,29 @@
+CREATE TABLE archives (
+SRA_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+organism TINYTEXT,
+accession_no TINYTEXT,
+no_reads INTEGER,
+read_type TINYTEXT
+);
+
+
+
+CREATE TABLE results (
+RUN_ID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+SRA_ID TINYTEXT,
+aligner_ID TINYTEXT,
+proccess_time FLOAT,
+align_time FLOAT,
+mapped_reads INTEGER,
+mapped_quality FLOAT,
+cpu TINYTEXT,
+ram TINYTEXT
+);
+
+
+
+CREATE TABLE aligner_ID (
+aligner_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+version TINYTEXT,
+parameters TINYTEXT,
+
