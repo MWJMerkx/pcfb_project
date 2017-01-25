@@ -11,7 +11,8 @@ import time
 
 def benchmark(inputFile):
 	'''Wrapper function for aligner so benchmark can be performed'''
-	output = "../test_data/index_files/libTest" 
+	output = "../test_data/index_files/libTest"
+	subprocess.call("mkdir -p ../test_data/index_files", shell= True) 
 	startTime = time.time()
 	debug = go(inputFile, output)
 	endTime = time.time()
