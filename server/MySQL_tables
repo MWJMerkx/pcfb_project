@@ -14,7 +14,8 @@ SRA_ID TINYTEXT,
 aligner_ID TINYTEXT,
 proccess_time FLOAT,
 align_time FLOAT,
-mapped_reads INTEGER,
+number_reads INT,
+mapped_reads INT,
 mapped_quality FLOAT,
 cpu TINYTEXT,
 ram TINYTEXT
@@ -27,3 +28,10 @@ aligner_ID VARCHAR(20) NOT NULL PRIMARY KEY,
 version TINYTEXT,
 parameters TINYTEXT,
 
+
+INSERT INTO archives SET
+SRA_ID='E_coli_MG1655',
+organism='Escherichia_coli',
+accession_no='SRX2510268'
+no_reads=13599935
+read_type='Paired';
