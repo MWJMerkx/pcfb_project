@@ -27,7 +27,8 @@ def getInfo():
 	#format and convert
 	if cpuName:
 		cpuName = str(cpuName[0]).split("  ")[-1]
-
+	else:
+		cpuName = str(cpuName)
 
 
 	#RAM availible is the last field in the free -m call. These fields are split with
