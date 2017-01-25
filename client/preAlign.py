@@ -7,6 +7,18 @@
 #Bowtie2 example
 
 import subprocess
+import time
+
+def benchmark(inputFile):
+	'''Wrapper function for aligner so benchmark can be performed'''
+	output = "../test_data/index_files/libTest" 
+	startTime = time.time()
+	debug = go(inputFile, output)
+	endTime = time.time()
+	bmPreAlign = endTime - startTime
+	return([bmPreAlign, output, debug]) #bmPreAlign == time in seconds,\
+#	 output what needs to be included as argument for next step.
+
 
 def go(indexInputPath, indexOutputPath): 
 	comIndex = "bowtie2-build -f {0} {1}".format(indexInputPath,\
@@ -16,6 +28,6 @@ def go(indexInputPath, indexOutputPath):
 
 if __name__ == "main":
 	indexInputPath = "../test_data/e_coli_mg1655.fasta"
-	indexInputPath	= "../test_data/index_files/libTest"
+	indexOutputPath	= "../test_data/index_files/libTest"
 	debug = go(indexInputPath, indexOutputPath)
 
