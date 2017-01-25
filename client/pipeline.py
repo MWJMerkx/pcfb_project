@@ -11,38 +11,23 @@ shortReads = ["../test_data/sra_sepair_1.fasta", "../test_data/sra_sepair_2.fast
 referenceGenome = "../test_data/E_coli_reference.fasta"
 sra_ID = "E_coli_MG1655"
 mapper = "Bowtie2"
+benchmarkFile = "../test_data/benchmark.txt"
 
 #gather hardware data
 hwInfo = hardware_inquire34.getInfo()
-#bmHardware = timeit.timeit("testHardware", \
-#	setup= "from __main__ import testHardware", number= 1)
 
-#setup timers
-
-#make index files of refernce genome and time
-#make seperate module and import prealign function
-
-#comIndex = "bowtie2-build -f {0} {1}".format(referenceGenome, preAlignOutput)
+#Run and benchmark preAlignment step
 [bmPreAlign, preAlignOutput, debugPreAlign] = preAlign.benchmark(referenceGenome)
 
-#bmPreAlign = timeit.timeit("testPreAlign", \
-#		setup= "from __main__ import testPreAlign", number= 1)
-
-#run aligner and time
-#make seperate module and import align function
-#shortReadsPath = "../test_data/sra_set.fasta"
-#alignOutputPath = "../test_data/libtest"
-
-#comAlign = "bowtie2 -f -x {0} -U {1} -S {2}".format(indexOutputPath,\
-#					 shortReadsPath, alignOutputPath)
-
+#Run and benchmark alignment step
 [bmAlign, debug] = align.benchmark(preAlignOutput, shortReads)
-#bmAlign = timeit.timeit("testAlign", \
-#			setup= "from __main__ import testAlign", number= 1)
-print("Hardware: {0}s\nPreAlign: {1}s\nbmAlign: {2}s\n".format("NA", bmPreAlign, bmAlign))
 
-benchmarkHandle = open("../test_data/benchmark.txt","w")
+#print the time of the preAlignment and alignment steps to screen 
+print("PreAlign: {0}s\nbmAlign: {1}s\n".format(bmPreAlign, bmAlign))
 
-benchmarkHandle.write("{0},{5},{1},{2},{3},{4}"\
-	.format(sra_ID,bmPreAlign, bmAlign, hwInfo[0], hwInfo[1], mapper))
+#Write results to benchmark file
+benchmarkHandle = open(benchmarkFile,"w")
+
+benchmarkHandle.write("{0},{1},{2},{3},{4},{5}"\
+	.format(sra_ID, mapper, bmPreAlign, bmAlign, hwInfo[0], hwInfo[1]))
 
