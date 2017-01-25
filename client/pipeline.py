@@ -12,6 +12,8 @@ shortReads = ["../test_data/sra_sepair_1.fasta", "../test_data/sra_sepair_2.fast
 referenceGenome = "../test_data/e_coli_mg1655.fasta"
 alignmentOutput = "../test_data/newest_alignment.sam"
 #preAlignOutput = "../test_data/index_files/indexPipeline"	
+sra_ID = "E_coli_MG1655"
+
 
 #gather hardware data
 hwInfo = hardware_inquire34.getInfo()
@@ -44,6 +46,6 @@ print("Hardware: {0}s\nPreAlign: {1}s\nbmAlign: {2}s\n".format("NA", bmPreAlign,
 
 benchmarkHandle = open("../test_data/benchmark.txt","w")
 
-benchmarkHandle.write("Bowtie2,{0},{1}, NA, {2}, {3}"\
-	.format(bmPreAlign, bmAlign, hwInfo[0], hwInfo[1]))
+benchmarkHandle.write("{0},Bowtie2,{1},{2}, NA, {3}, {4}"\
+	.format(sra_ID,bmPreAlign, bmAlign, hwInfo[0], hwInfo[1]))
 
