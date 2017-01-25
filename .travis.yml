@@ -8,6 +8,7 @@ python:
 install:
   - sudo apt-get install bowtie2
 
-script:  
-  - ./client/hardware_inquire34.py
-  - ./client/pipeline.py
+script:
+  - cd client/
+  - ./hardware_inquire34.py
+  - ./pipeline.py
