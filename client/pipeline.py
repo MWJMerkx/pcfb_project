@@ -6,14 +6,11 @@ import hardware_inquire34
 import preAlign
 import align
 import time
-import cProfile
 
 shortReads = ["../test_data/sra_sepair_1.fasta", "../test_data/sra_sepair_2.fasta"]
 referenceGenome = "../test_data/E_coli_reference.fasta"
-alignmentOutput = "../test_data/newest_alignment.sam"
-#preAlignOutput = "../test_data/index_files/indexPipeline"	
 sra_ID = "E_coli_MG1655"
-
+mapper = "Bowtie2"
 
 #gather hardware data
 hwInfo = hardware_inquire34.getInfo()
@@ -46,6 +43,6 @@ print("Hardware: {0}s\nPreAlign: {1}s\nbmAlign: {2}s\n".format("NA", bmPreAlign,
 
 benchmarkHandle = open("../test_data/benchmark.txt","w")
 
-benchmarkHandle.write("{0},Bowtie2,{1},{2}, NA, {3}, {4}"\
-	.format(sra_ID,bmPreAlign, bmAlign, hwInfo[0], hwInfo[1]))
+benchmarkHandle.write("{0},{5},{1},{2}, {3}, {4}"\
+	.format(sra_ID,bmPreAlign, bmAlign, hwInfo[0], hwInfo[1], mapper))
 
