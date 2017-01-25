@@ -10,4 +10,4 @@ install:
 
 script:  
   - ./client/hardware_inquire34.py
-  - ./client/pipleline.py
+  - ./client/pipeline.py
