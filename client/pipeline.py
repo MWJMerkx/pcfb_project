@@ -43,6 +43,6 @@ print("Hardware: {0}s\nPreAlign: {1}s\nbmAlign: {2}s\n".format("NA", bmPreAlign,
 
 benchmarkHandle = open("../test_data/benchmark.txt","w")
 
-benchmarkHandle.write("{0},{5},{1},{2}, {3}, {4}"\
+benchmarkHandle.write("{0},{5},{1},{2},{3},{4}"\
 	.format(sra_ID,bmPreAlign, bmAlign, hwInfo[0], hwInfo[1], mapper))
 
