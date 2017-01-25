@@ -5,7 +5,9 @@ python:
   - "3.4"
   - "3.5.2"
 
-install: true
+install:
+  - sudo apt-get install bowtie2
 
 script:  
   - ./client/hardware_inquire34.py
+  - ./client/pipleline.py
