@@ -7,3 +7,5 @@
 *.pptx
 *.bt*
 *__pycache__*
+*.pyc
+
