@@ -8,4 +8,4 @@
 *.bt*
 *__pycache__*
 *.pyc
-
+*/qualimap_results/*
