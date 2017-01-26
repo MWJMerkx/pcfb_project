@@ -12,7 +12,7 @@ shortReads = ["../test_data/E_coli_MG1655_1.fasta", "../test_data/E_coli_MG1655_
 referenceGenome = "../test_data/E_coli_reference.fasta"
 sra_ID = "E_coli_MG1655"
 mapper = "Bowtie2"
-benchmarkFile = "../test_data/bowtie2_benchmark_inne.txt"
+benchmarkFile = "../test_data/{0}_benchmark_inne.txt".format(mapper)
 
 #gather hardware data
 hwInfo = hardware_inquire34.getInfo()
