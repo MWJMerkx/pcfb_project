@@ -1,6 +1,0 @@
-INSERT INTO archives SET
-SRA_ID='E.coli_MG1655',
-organism='Escherichia_coli',
-accession_no='SRX2510268',
-no_reads=13599935,
-read_type='Paired';

@@ -7,7 +7,7 @@ import preAlign
 import align
 import time
 
-shortReads = ["../test_data/sra_sepair_1.fasta", "../test_data/sra_sepair_2.fasta"]
+shortReads = ["../test_data/E_coli_MG1655_1.fasta", "../test_data/E_coli_MG1655_2.fasta"]
 #shortReads = "../test_data/E_coli_reference.fasta"
 referenceGenome = "../test_data/E_coli_reference.fasta"
 sra_ID = "E_coli_MG1655"
