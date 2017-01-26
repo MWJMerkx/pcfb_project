@@ -1,1 +1,0 @@
-Bowtie2,7.839989848434925e-07,7.210001058410853e-07, NA, cpu = Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz, RAM available = 2398
