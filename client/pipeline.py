@@ -8,10 +8,11 @@ import align
 import time
 
 shortReads = ["../test_data/sra_sepair_1.fasta", "../test_data/sra_sepair_2.fasta"]
+#shortReads = "../test_data/E_coli_reference.fasta"
 referenceGenome = "../test_data/E_coli_reference.fasta"
 sra_ID = "E_coli_MG1655"
 mapper = "Bowtie2"
-benchmarkFile = "../test_data/benchmark.txt"
+benchmarkFile = "../test_data/bowtie2_benchmark_inne.txt"
 
 #gather hardware data
 hwInfo = hardware_inquire34.getInfo()

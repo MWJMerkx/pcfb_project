@@ -6,9 +6,11 @@ import time
 
 def benchmark(outputPreStep, shortReads):
 	output = "../test_data/latest_alignment_paired.sam"
+	
 	startTime = time.time()
 	debug = go(outputPreStep, shortReads, output)
 	endTime = time.time()
+	
 	bmAlign = endTime - startTime
 	return([bmAlign, debug])
 

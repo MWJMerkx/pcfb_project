@@ -24,7 +24,7 @@ def benchmark(inputFile):
 
 
 def go(indexInputPath, indexOutputPath): 
-	comIndex = "bwa index -p {0} -a is indexInputPath{1}".format(indexOutputPath,\
+	comIndex = "bwa index -p {0} -a is {1}".format(indexOutputPath,\
 						indexInputPath)
 	debug = subprocess.call(comIndex, shell=True)
 	return(debug)
