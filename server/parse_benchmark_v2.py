@@ -107,7 +107,7 @@ for Line in InFile:
 MyCursor.execute(InsertData)
 MyClient.commit()
 
-## close connection to the MySQL server
+## finally close the connection to the MySQL server
 
 MyCursor.close()
 MyClient.close()

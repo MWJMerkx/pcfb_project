@@ -58,12 +58,29 @@ Contains all the individual scripts pertaining to database structure, quality co
 
 Contains the sample data sets used to preform intial tests of client and server side processes. 
 
-## Function:
+## Operation:
+
+### Please make sure that before trying to execute the scripts you have the correct programs installed as found in the required software list found below.
+
+#### Running the benchmark:
 
 For use of the SRA benchmarking tool, download the required package from the downloads folder and run the run_benchmark.sh file.
-Please be aware that pre-instalation of the selected tool is required (eg. Bowtie2). 
-Generated output files can then be quality controlled using the parser_benchmark_v2.py script foun in the server folder. 
-Please note that for this SAMtools, QualiMap, and access to a suitably setup database is required.
+Please be aware that pre-instalation of the selected tool is required (eg. Bowtie2 or Bwa). 
+
+#### Running quality control:
+
+For running the serverside quality control and insertion into database, make sure the database is set up correctly beforehand.
+Run the parse_benchmark_v2.py scrips from within the folder where the benchmark output files have been saved. 
+Please be aware that pre-instalation of the required software (found below) is needed for operation.
+The input required for the correct operation of the script is: [benchmark file] [.sam output file] eg. Bwa_benchmark.txt Bwa_alignment_paired.sam
+
+#### Alternative if above options don't work:
+
+Clone the repository and navigate to the test_data folder. From within this folder execute the pipeline.py script.
+This should generate the output benchmark.txt and alignment.sam file within the test_data folder.
+Now, from within the test_data folder, execute the parse_benchmark_v2.py script. 
+This will preform the quality control on the .sam file and upload the data from the benchmark and control to the database.
+
 
 ## Database structure:
 
