@@ -3,6 +3,8 @@
 # Inne Lemstra
 # Michiel Merkx
 
+# 24-01-2017
+
 # reformat datafile from client side speed benchmarking of short read aligner
 # queries database for sra data table, if not present create table
 # enters benchmark information into the relevant database table
@@ -11,6 +13,17 @@
 
 
 ##### Outdated and no longer in use
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
+""" Inne Lemstra and Michiel Merkx 26-JAN-2017
 
-# Inne Lemstra
-# Michiel Merkx
+ for Python version 3.4 or higher
 
-# for Python version 3.4 or higher
+ requires instalation of mysqlclient (https://pypi.python.org/pypi/mysqlclient)
+ requires instalation of SAMtools (http://samtools.sourceforge.net/)
+ requires instalation of QualiMap (http://qualimap.bioinfo.cipf.es/)
+ requires access to MySQL database
 
-# requires instalation of mysqlclient (https://pypi.python.org/pypi/mysqlclient)
-# requires instalation of SAMtools (http://samtools.sourceforge.net/)
-# requires instalation of QualiMap (http://qualimap.bioinfo.cipf.es/)
-# requires access to MySQL database
-
-# run from folder where benchmark output data is stored.
-# input required for function:
-# [name of benchmark file] [name of mapper output file]
-# eg: benchmark.txt pairedAlignment.sam
-
+ run from folder where benchmark output data is stored.
+ input required for function:
+ [name of benchmark file] [name of mapper output file]
+ eg: benchmark.txt pairedAlignment.sam
+"""
 
 #import gzip
 import MySQLdb as mysqlclient
