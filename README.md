@@ -7,18 +7,16 @@
 
 # pcbf_project
 
-#### Inne Lemstra and Michiel Merkx
-
-
-
 ## Short read archive mapper benchmarking tool and database
 
-### Goal:
+#### Inne Lemstra and Michiel Merkx
+
+#### Goal:
 
 To create a tool to allow benchmarking of various mappers (eg. bowtie2, bwa) on a standardised dataset,
 and store the results in an easily accessible database.
 
-### part1:
+#### part1:
 
 Client side:
 
@@ -34,7 +32,7 @@ CPU model
 
 RAM available
 
-### part 2
+#### part 2
 
 Server side:
 
