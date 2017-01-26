@@ -11,7 +11,7 @@ import time
 
 def benchmark(inputFile):
 	'''Wrapper function for aligner so benchmark can be performed'''
-	output = "../test_data/index_files/libTest"
+	output = "../test_data/index_files/bwa_index"
 	subprocess.call("mkdir -p ../test_data/index_files", shell= True) 
 	
 	startTime = time.time()
@@ -24,8 +24,8 @@ def benchmark(inputFile):
 
 
 def go(indexInputPath, indexOutputPath): 
-	comIndex = "bowtie2-build -f {0} {1}".format(indexInputPath,\
-						indexOutputPath)
+	comIndex = "bwa index -p {0} -a is {1}".format(indexOutputPath,\
+						indexInputPath)
 	debug = subprocess.call(comIndex, shell=True)
 	return(debug)
 
@@ -33,4 +33,3 @@ if __name__ == "main":
 	indexInputPath = "../test_data/e_coli_mg1655.fasta"
 	indexOutputPath	= "../test_data/index_files/libTest"
 	debug = go(indexInputPath, indexOutputPath)
-
