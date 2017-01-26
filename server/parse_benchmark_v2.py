@@ -42,6 +42,7 @@ subprocess.call(Qualimap +" bamqc -bam sorted_output.sam -outdir qualimap_result
 ## 'number or reads' for total reads in file
 ## 'number of mapped reads' for total number of reads mapped
 ## 'mean mapping quality' for the quality of the mapping result
+## and stores the results in a list "Mapped" for later use
 
 
 ResultFile = open('./qualimap_results/genome_results.txt', 'r')
