@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 #Inne Lemstra and Michiel Merkx
+"""Benchmark a short sequence aligner by calling on different subscripts
+	These subscripts are stored as libraries in the same directory
+ScriptFlow:
+This python pipeline consist of the following steps:
+	Get hardware info (using bash commands)
+	Run and time the preAligment step of the aligner
+	Run the alignment step of the aligner (using the output of the prestep)
 
+OutPut:
+	This script will print a short message to screen of timing of each alignment step.
+These timings as wel as hardware info and info about aligner used will be written to a textfile. The name of this file is set iin the first part of the script.
+	Where ans how the alignment output of the alignment program will be written is determined in the library align. (as well as output for prestep is determined in preAlign library)
+	
+"""
 import subprocess
 import hardware_inquire34
 import preAlign
@@ -34,5 +47,5 @@ print("PreAlign: {0}s\nbmAlign: {1}s\n".format(bmPreAlign, bmAlign))
 benchmarkHandle = open(benchmarkFile,"w")
 
 benchmarkHandle.write("{0},{1},{2},{3},{4},{5}"\
-	.format(sra_ID, mapper, bmPreAlign, bmAlign, hwInfo[0], hwInfo[1]))
+		.format(sra_ID, mapper, bmPreAlign, bmAlign, hwInfo[0], hwInfo[1]))
 
