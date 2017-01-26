@@ -1,0 +1,6 @@
+SELECT aligner_id, AVG(align_time) FROM results GROUP BY aligner_id;
+
+SELECT results.* FROM aligner, results
+WHERE aligner.version="V2.2.4";
+
+SELECT archives.* FROM archives, results WHERE results.aligner_ID="Bwa" AND results.cpu LIKE '%i3%';
