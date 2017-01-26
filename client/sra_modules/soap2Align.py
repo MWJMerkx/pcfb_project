@@ -5,7 +5,7 @@ import subprocess
 import time
 
 def benchmark(outputPreStep, shortReads):
-	output = "../test_data/soap2Alignment.sam"
+	output = "../test_data/soap2_alignment_paired.sam"
 	
 	startTime = time.time()
 	debug = go(outputPreStep, shortReads, output)
