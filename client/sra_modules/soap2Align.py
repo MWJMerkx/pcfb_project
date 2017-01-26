@@ -18,7 +18,7 @@ def go(indexOutputPath, shortReadspath, alignOutputPath):
 	comAlign = "soap -a {1} {2} -D {0} -o {3}"\
 		.format(indexOutputPath, shortReadspath[0],\
 			 shortReadspath[1], alignOutputPath)
-	debug = subprocess.call(comAlign, shell = True, env=dict(ENV='~/.bashrc')
+	debug = subprocess.call(["/bin/bash", "-i", "-c", comAlign])
 	return(debug)
 
 if __name__ == "main":

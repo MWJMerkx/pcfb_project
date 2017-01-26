@@ -15,7 +15,7 @@ def benchmark(inputFile):
 	subprocess.call("mkdir -p ../test_data/index_files", shell= True) 
 	
 	startTime = time.time()
-	debug = go(inputFile, output)
+	debug = go(inputFile)
 	endTime = time.time()
 	
 	bmPreAlign = endTime - startTime
@@ -24,8 +24,8 @@ def benchmark(inputFile):
 
 
 def go(indexInputPath): 
-	comIndex = "2bwt-builder {0}".format(indexInputPath))
-	debug = subprocess.call(comIndex, shell=True, env=dict(ENV='~/bashrc')
+	comIndex = "2bwt-builder {0}".format(indexInputPath)
+	debug = subprocess.call(["/bin/bash", "-i", "-c", comIndex])
 	return(debug)
 
 if __name__ == "main":
