@@ -73,6 +73,7 @@ For running the serverside quality control and insertion into database, make sur
 Run the parse_benchmark_v2.py scrips from within the folder where the benchmark output files have been saved. 
 Please be aware that pre-instalation of the required software (found below) is needed for operation.
 The input required for the correct operation of the script is: [benchmark file] [.sam output file] eg. Bwa_benchmark.txt Bwa_alignment_paired.sam
+Note: path to Qualimap executable may differ and would need to be adjusted for each user.
 
 #### Alternative if above options don't work:
 
