@@ -4,7 +4,7 @@
 #example of a prealign function, this is SRA dendent. The server should select
 #which sra specific code is used and package it as preAlign.py
 
-#Bowtie2 example
+#Soap2 example, not working still under construction
 
 import subprocess
 import time

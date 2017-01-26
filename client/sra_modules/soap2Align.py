@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 #Michiel Merx and Inne Lemstra 2017-01-24
+#Not working still under construction
 import subprocess
 import time
 
