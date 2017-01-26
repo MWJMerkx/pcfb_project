@@ -1,0 +1,1 @@
+E_coli_MG1655,Bowtie2,4.898810863494873,1.0603606700897217,cpu = Intel(R) Core(TM) i7-2700K CPU @ 3.50GHz,RAM available = 6848
