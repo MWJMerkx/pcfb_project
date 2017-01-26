@@ -20,11 +20,12 @@ import preAlign
 import align
 import time
 
-mapper = "Bowtie2"
-shortReads = ["../test_data/E_coli_MG1655_1.fasta", "../test_data/E_coli_MG1655_2.fasta"]
+#mapper = "Bowtie2"
+#shortReads = ["../test_data/E_coli_MG1655_1.fasta", "../test_data/E_coli_MG1655_2.fasta"]
+
 ##Bwa needs these statements to run.
-#mapper = "Bwa"
-#shortReads = "../test_data/E_coli_MG1655.fasta"
+mapper = "Bwa"
+shortReads = "../test_data/E_coli_MG1655.fasta"
 
 referenceGenome = "../test_data/E_coli_reference.fasta"
 sra_ID = "E_coli_MG1655"	#one of the test data sets that could be run
