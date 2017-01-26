@@ -3,6 +3,21 @@
 # Inne Lemstra
 # Michiel Merkx
 
+
+
+#### Out-dated and no longer in use
+
+
+
+
+
+
+
+
+
+
+
+
 # query the database and return benchmark speeds on selected short read aligners
 # requires instalation of mysqlclient python module
 

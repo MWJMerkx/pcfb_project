@@ -31,6 +31,18 @@ cpu TINYTEXT,
 ram TINYTEXT
 );
 
+# aligner table which stores information about the version and 
+
+CREATE TABLE aligner (
+aligner_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+version TINYTEXT,
+set_parameters TINYTEXT,
+);
+
+
+
+
+
 # Initial entry to archives table with information on SRA_ID used in initial benchmark
 
 INSERT INTO archives SET
@@ -39,3 +51,16 @@ organism='Escherichia_coli',
 accession_no='SRX2510268'
 no_reads=13599935
 read_type='Paired';
+
+# Initial entry to aligner table with information about the aligners used in the initial benchmark
+
+INSERT INTO aligner SET
+aligner_ID='Bowtie2',
+version='V2.2.4',
+set_parameters='-f -x {0} -1 {1} -2 {2} -S {3}';
+
+
+INSERT INTO aligner SET
+aligner_ID='Bwa',
+version='V0.7.12-r1039',
+set_parameters='mem -P {0} {1} > {3}';

@@ -10,6 +10,10 @@
 # requires instalation of mysqlclient python module
 
 
+##### Outdated and no longer in use
+
+
+
 import gzip
 import MySQLdb as mysqlclient
 import re
