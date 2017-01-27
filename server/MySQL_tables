@@ -31,7 +31,7 @@ cpu TINYTEXT,
 ram TINYTEXT
 );
 
-# aligner table which stores information about the version and 
+# aligner table which stores information about the version and arguments used in the operation
 
 CREATE TABLE aligner (
 aligner_ID VARCHAR(20) NOT NULL PRIMARY KEY,
